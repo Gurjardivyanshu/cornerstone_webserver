@@ -679,6 +679,56 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </div>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </section>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <style>
+/* Accordion base */
+.accordion-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+/* Rotate icon when active */
+.accordion-icon {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Active state */
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const accordionItems = document.querySelectorAll(".accordion-item");
+
+  accordionItems.forEach(item => {
+    const heading = item.querySelector(".accordion-heading");
+    const content = item.querySelector(".accordion-content");
+
+    // Ensure all are closed initially
+    content.style.height = "0px";
+
+    heading.addEventListener("click", function () {
+      const isActive = item.classList.contains("active");
+
+      // Close all accordions
+      accordionItems.forEach(i => {
+        i.classList.remove("active");
+        i.querySelector(".accordion-content").style.height = "0px";
+      });
+
+      // Toggle current accordion
+      if (!isActive) {
+        item.classList.add("active");
+        content.style.height = content.scrollHeight + "px";
+      }
+    });
+  });
+});
+</script>
+
                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <section class="faqs-section section-spacing">
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <div class="w-layout-blockcontainer container-medium w-container">
                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <div data-w-id="bedbb52d-01cb-825b-62c0-c748f4cd627a" style="opacity:100" class="section-title text-center">
