@@ -679,7 +679,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </div>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </section>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                <style>
+       <style>
 /* Accordion base */
 .accordion-content {
   height: 0;
@@ -687,10 +687,23 @@
   transition: height 0.35s ease;
 }
 
+/* Titles */
+.accordion-title {
+  font-size: 16px; /* was bigger, slightly reduced */
+  line-height: 1.4;
+}
+
+/* Description text */
+.accordion-description {
+  font-size: 14px; /* slightly smaller for clean look */
+  line-height: 1.6;
+}
+
 /* Rotate icon when active */
 .accordion-icon {
   transition: transform 0.3s ease;
   cursor: pointer;
+  width: 18px; /* optional: slightly smaller icon */
 }
 
 /* Active state */
@@ -698,6 +711,7 @@
   transform: rotate(180deg);
 }
 </style>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
