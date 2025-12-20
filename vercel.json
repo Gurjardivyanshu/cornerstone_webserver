@@ -6,22 +6,22 @@
     },
     {
       "source": "/:folder/",
-      "destination": "/:folder/index.html"
+      "destination": "/:folder/:folder/index.html"
     }
   ],
   "redirects": [
     {
-      "source": "/:folder/:file.html",
-      "destination": "/:folder/:file",
-      "permanent": true
-    },
-    {
-      "source": "/:folder/index.html",
+      "source": "/:folder/:folder/index.html",
       "destination": "/:folder/",
       "permanent": true
     },
     {
-      "source": "/:folder/index",
+      "source": "/:folder/:folder/index",
+      "destination": "/:folder/",
+      "permanent": true
+    },
+    {
+      "source": "/:folder/:folder.html",
       "destination": "/:folder/",
       "permanent": true
     }
