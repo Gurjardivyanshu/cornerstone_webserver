@@ -1,23 +1,28 @@
 {
   "rewrites": [
     {
-      "source": "/:path*/",
-      "destination": "/:path*/index.html"
+      "source": "/:folder/:file",
+      "destination": "/:folder/:file.html"
     },
     {
-      "source": "/:path*",
-      "destination": "/:path*.html"
+      "source": "/:folder/",
+      "destination": "/:folder/index.html"
     }
   ],
   "redirects": [
     {
-      "source": "/:path*/index.html",
-      "destination": "/:path*/",
+      "source": "/:folder/:file.html",
+      "destination": "/:folder/:file",
       "permanent": true
     },
     {
-      "source": "/:path*/index",
-      "destination": "/:path*/",
+      "source": "/:folder/index.html",
+      "destination": "/:folder/",
+      "permanent": true
+    },
+    {
+      "source": "/:folder/index",
+      "destination": "/:folder/",
       "permanent": true
     }
   ]
